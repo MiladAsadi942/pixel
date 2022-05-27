@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/hom.css' %}">
+</head>
+<body dir="rtl">
+    
+        <section class="top-header2">
+            {% for Dbs in dbs %}
+            <div class="product">
+                <div class="img">
+                    <img src="{{Dbs.ProdImg.url}}" alt="">
+                </div>
+                <div class="text"><h1>{{Dbs.ProdTitle}}</h1>
+                    <p>{{Dbs.ProdAbout}}</p></div>
+                
+                <div class="color">
+                    <div class="colors">
+                    <span class="red"></span>
+                    <span class="gren"></span>
+                    <span class="white"></span>
+                    <span class="gray"></span>
+                </div>
+                <h1>{{Dbs.ProdPrice}}$</h1>
+                </div>
+                <div class="btn"><button>Add Card</button></div>
+                
+            </div>
+            {% endfor %}
+        </section>
+    
+    <script src="{% static 'project1/js/jquery/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'project1/js/home.js' %}"></script>
+    
+</body>
+</html>

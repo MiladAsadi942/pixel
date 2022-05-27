@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/font-farsi/Sans a4fran3.woff' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/contact-me/contacts.css' %}">
+    <script src="{% static 'project1/js/jquery/jquery-3.6.0.min.js' %}"></script>
+
+    <script>
+        window.addEventListener('load',function(){
+            document.querySelector('.continer-load').classList.add('load-stop')
+        })
+    </script>
+</head>
+<body dir="rtl">
+    <div class="continer-load"><div class="loading"></div></div>
+    {% for contact in conts %}
+    <div class="continer" style="background: linear-gradient(rgba(2, 71, 88, 0.7),rgba(18, 85, 79, 0.7)) , url('{{contact.ContImg.url}}');background-position: center;background-repeat: no-repeat;background-size: cover;width: 100%;">
+        <div class="home"><a href="../index.html"><i class="fa-solid fa-house-user"></i></a></div>
+        <div class="form">
+            <div class="txt">
+
+                <div class="contact">
+                    <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+                    <div class="text">
+                        <p class="title">آدرس</p>
+                        <p>{{contact.adress}}</p>
+                    </div>
+                </div>
+                
+
+                <div class="contact">
+                    <a href="#"><i class="fa-solid fa-phone-flip"></i></a>
+                    <div class="text">
+                        <p class="title">موبایل</p>
+                        <p>{{contact.mobile}}</p>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+                    <div class="text">
+                        <p class="title">ایمیل آدرس : </p>
+                        <p>{{contact.email}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="inputs">
+                <h3>ارتباط با ما</h3>
+                <form action="">
+                    {% csrf_token %}
+                    <input type="text" placeholder="نام کامل">
+                    <input type="email" placeholder="ایمیل">
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="پیام"></textarea>
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<footer dir="rtl">
+    <div class="flx">
+        <div class="right-footer">
+            <div class="logo-footer"><img src="{{contact.ContactLogo.url}}" alt=""></div>
+        </div>
+        <div class="left-footer">
+            <h4>{{contact.ContactTitle}}</h4>
+            <p>{{contact.ContactAbout}}</p>
+            <p>تماس با ما: {{contact.email}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</footer>
+<div class="top-footer">© کپی برداری از مطالب سایت با ذکر لینک منبع، بلامانع می باشد.</div>
+<script src="{% static 'project1/js/contact-me/contact.js' %}"></script>
+</body>
+</html>

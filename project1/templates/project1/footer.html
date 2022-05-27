@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/footer.css' %}">
+</head>
+<body dir="rtl">
+    <footer>
+        <div class="flx">
+            {% for contact in conts %}
+            <div class="right-footer">
+                <div class="logo-footer"><img src="{{contact.ContactLogo.url}}" alt=""></div>
+            </div>
+            <div class="left-footer">
+                <h4>{{contact.ContactTitle}}</h4>
+                <p>{{contact.ContactAbout}}</p>
+                <p>تماس با ما: {{contact.email}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </footer>
+</body>
+</html>

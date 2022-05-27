@@ -1,0 +1,280 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/stylese.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/fontawesome.min.css' %}">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+
+  <script src="{% static 'project1/js/jquery/jquery-3.6.0.min.js' %}"></script>
+
+  <script>
+      window.addEventListener('load',function(){
+          document.querySelector('.continer-load').classList.add('load-stop')
+      })
+  </script>
+</head>
+<body dir="rtl" onload="sized()" onresize="sized()">
+
+    
+
+
+
+    <div class="continer-load"><div class="loading"></div></div>
+    
+    <div class="top-continer">
+        <div class="conter">
+            <div class="name">
+                <i class="fa-solid fa-house"></i>
+                <p>خانه</p>
+            </div>
+            <div class="name">
+                <i class="fa-solid fa-user"></i>
+                <p>حساب کاربری</p>
+            </div>
+            <div class="name">
+                <i class="fa-solid fa-store"></i>
+                <p>سوپرمارکت</p>
+            </div>
+            <div class="name">
+                <i class="fa-brands fa-shopify"></i>
+                <p>فروشگاه</p>
+            </div>
+            
+            
+            
+            
+        </div>
+    </div>
+    <div class="continer" id="continer">
+
+        <div class="top-header">
+            
+            <div class="login-sign">
+                <a href="/index/login/"><i class="fa-solid fa-user"></i></a>
+                <i class="fa-solid fa-right-to-bracket"></i>
+            </div>
+
+            <div class="logo">
+                
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-telegram"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+        <header id="header">
+            <div class="left">
+                <a href="#"><i class="fa-solid fa-user-plus"  ></i></a>
+                <a href="#"><i class="fa-solid fa-magnifying-glass" id="search"></i></a>
+                <div class="input-search" id="input-search"><input type="search" placeholder="جستجو"></div>
+            </div>
+            <div class="menue hide" id="menu"><i class="fa-solid fa-bars"></i></div>
+            
+        <nav id="navjs">
+           
+            <ul>
+                
+                    {% for navs in nav %}
+                    <li class="home"><a href="{{navs.hrf}}">{{navs}}</a></li>
+                    {% endfor %}
+                
+                
+            </ul>
+        </nav>
+        {% for logo in logoss %}
+        <div class="logo-img"><img src="{{logo.Logo.url}}" alt="" srcset=""></div>
+        {% endfor %}
+    </header>
+    
+
+    
+    <section class="sliders">
+
+        <!-- Swiper -->
+<div class="swiper mySwiper">
+   <div class="swiper-wrapper">
+    {% for slid in slider %}
+        <div class="swiper-slide"><img src="{{slid.SliderImgs.url}}" alt=""></div>
+    {% endfor %}
+   </div>
+   <div class="swiper-button-next"></div>
+   <div class="swiper-button-prev"></div>
+   <div class="swiper-pagination"></div>
+ </div>
+</section>
+
+<section class="card-product">
+
+    {% for Card in filt %}
+    <div class="card">
+        <img src="{{Card.ProdImg.url}}" alt="">
+        <h2>{{Card.ProdTitle}}</h2>
+        <p>{{Card.ProdAbout}}</p>
+        <h3 class="gold">{{Card.ProdPricr}}</h3>
+        <div class="star">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star unset"></i>
+            <i class="fa-solid fa-star unset"></i>
+            <i class="fa-solid fa-star unset"></i>
+        </div>
+        <button class="bg-gold" onclick="window.location.href='three/{{Card.id}}';">Add Card</button>
+    </div>
+
+
+    {% endfor %}
+    
+
+    
+
+</section>
+
+<div class="title">محصولات برگزیده</div>
+
+<section class="arsal">
+
+    {% for cars in car %}
+    <div class="free">
+        <i class="{{cars.Carlogo}}"></i>
+        <div class="p-h">
+            <h4>{{cars.Cartitle}}</h4>
+            <p class="hidep">{{cars.CarAbout}}</p>
+        </div>
+    </div>
+
+    {% endfor %}
+
+    
+
+</section>
+
+<div class="title">محصولات برگزیده</div>
+
+    <div class="slider-products" dir="ltr">
+
+         <!-- Swiper -->
+    <div class="swiper swiper2">
+        <div class="swiper-wrapper">
+          
+
+         
+          {% for j in num %}
+          {{j.id}}
+          <div class="swiper-slide">
+            <div class="prod-slider">
+                <img src="{{j.ProdImg.url}}" alt="">
+                <h3>{{j.ProdTitle}}</h3>
+                <p>{{j.ProdAbout}}</p>
+                <div class="star">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star unset"></i>
+                    <i class="fa-solid fa-star unset"></i>
+                    <i class="fa-solid fa-star unset"></i>
+                </div>
+                <button onclick="window.location.href='product/{{j.id}}';">خرید</button>
+              </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+
+
+    <div class="title">محصولات برگزیده</div>
+    {% for img5 in img4 %}
+    <section class="tow-card">
+        <div class="card-1"><img src="{{img5.ImgOne.url}}" alt="" srcset=""></div>
+        <div class="card-2">
+            <div class="one"><img src="{{img5.Img1.url}}" alt=""></div>
+            <div class="one"><img src="{{img5.Img2.url}}" alt=""></div>
+            <div class="one"><img src="{{img5.Img3.url}}" alt=""></div>
+            <div class="one"><img src="{{img5.Img4.url}}" alt=""></div>
+        </div>
+    </section>
+    {% endfor %}
+
+    <div class="title">محصولات برگزیده</div>
+
+    <div class="tow-product">
+        {% for towimages in towimg %}
+        <div class="prod-one"><img src="{{towimages.Imgone.url}}" alt=""></div>
+        <div class="prod-tow"><img src="{{towimages.Imgtow.url}}" alt=""></div>
+        {% endfor %}
+    </div>
+
+
+
+    <footer>
+        <div class="botton-footer">
+        <div class="footer">
+            <div class="title-footer"><h5>عنوان</h5></div>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">دکان</a></li>
+            <li><a href="#">خرید</a></li>
+            <li><a href="#">جستجو</a></li>
+        </div>
+        <div class="footer">
+            <div class="title-footer"><h5>عنوان</h5></div>
+            <li><a href="#">ورود</a></li>
+            <li><a href="#">خروج</a></li>
+            <li><a href="#">موبایل</a></li>
+            <li><a href="#">آدرس</a></li>
+        </div>
+        <div class="footer">
+            <div class="title-footer"><h5>عنوان</h5></div>
+            <li><a href="#">صفحه مدریت</a></li>
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">اخبار</a></li>
+            <li><a href="#">فروشگاه</a></li>
+        </div>
+        <div class="footer">
+            <div class="title-footer"><h5>عنوان</h5></div>
+            <li><a href="#">تلفن</a></li>
+            <li><a href="#">دیزاینر</a></li>
+            <li><a href="#">وبلاک</a></li>
+            <li><a href="#">ایمیل</a></li>
+        </div>
+    </div>
+
+    <div class="mobile">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                <a href="#"><i class="fa-brands fa-google-drive"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-weixin"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-solid fa-wifi"></i>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+
+                
+                
+                    
+    </div>
+    </footer>
+    </div>
+
+
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="{% static 'project1/js/script.js' %}"></script>
+    
+</body>
+</html>

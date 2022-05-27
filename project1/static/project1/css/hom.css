@@ -1,0 +1,111 @@
+@font-face {
+    font-family: myFont;
+    src: url(font-farsi/Sans\ a4fran3.woff) format('woff');
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: myFont;
+}
+
+
+
+.top-header2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 5% 3%;
+    background: linear-gradient(to left ,#1ad1ff , blue);
+    
+}
+.top-header2 .product{
+    width: 25%;
+    border: 1px solid gray;
+    background: white;
+    border-radius: 16px;
+    color: #737373;
+    box-shadow: 5px 5px 5px gray;
+    margin: 10px 10px;
+    transition: all 2s;
+    
+}
+
+
+.img{
+    width: 100%;
+    padding: 5% 5%;
+    border-radius: 10px;
+}
+.product .img img{
+    width: 100%;
+    padding: 5% 5%;
+    border-radius: 10px;
+    transition: all 1s;
+    
+}
+.product .img img:hover{
+    transform: scale(1.2,1.2);
+}
+.product .text{
+    padding: 0 6%;
+    
+}
+.product .text h1{
+    font-size: 18px;
+}
+.product .text p{
+    font-size: 14px;
+}
+
+.product .color{
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 5%;
+}
+.product .color h1{
+    font-size: 16px;
+}
+.product .color .colors span{
+    padding: 2% 20%;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.red{
+    background: #ff471a;
+}
+.gren{
+    background: #66ffcc;
+}
+.white{
+    background: white;
+}
+.gray{
+    background: #bfbfbf;
+}
+.product .btn{
+    width: 100%;
+    padding: 5% 5%;
+}
+
+.product button{
+    width: 100%;
+    padding: 3% 3%;
+    border-radius: 40px;
+    margin-bottom: 10px;
+    background: linear-gradient(to left , #33ccff , #cc66ff);
+    color: white;
+    border: 0;
+    cursor: pointer;
+    
+}
+
+.product button:hover{
+    background: linear-gradient(to left , #4981d4 , #ff6666);
+}   

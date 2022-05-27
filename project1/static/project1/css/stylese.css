@@ -1,0 +1,1164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: myFont;
+    src: url(font-farsi/Sans\ a4fran3.woff) format('woff');
+  }
+
+  body{
+    font-family: myFont;
+   
+  }
+
+  
+.continer{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+   
+    
+}
+.continer-load{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    z-index: 15;
+}
+
+.loading{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid;
+    z-index: 16;
+    top: 40%;
+    right: 50%;
+    border-radius: 50%;
+    animation: load 1s infinite;
+    animation-timing-function: linear;
+    
+    animation-direction: reverse;
+    
+}
+.loading img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.load-stop{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes load{
+   
+    0%{
+        transform: rotate(0);
+        border-bottom: 0;
+    border-left: 0;
+        
+    }
+    50%{
+        transform: rotate(90deg);
+        border: 4px solid yellow;
+        border-bottom: 0;
+    border-left: 0;
+    }
+    75%{
+        transform: rotate(180deg);
+        border: 4px solid red;
+        border-bottom: 0;
+    border-left: 0;
+    }
+
+    100%{
+        transform: rotate(360deg);
+        border: 4px solid gray;
+        border-bottom: 0;
+    border-left: 0;
+    }
+    
+}
+
+
+.continer .top-header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #333333;
+    padding: 0.5% 7%;
+
+}
+
+.top-header .logo i {
+    margin: 0 5px;
+    font-size: 20px;
+    color: #f2f2f2;
+
+}
+
+.top-header .login-sign i{
+    margin: 0 5px;
+    font-size: 20px;
+    color: #f2f2f2;
+}
+
+
+.continer header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background: #f2f2f2;
+    padding: 5px 7%;
+    margin-bottom: 2%;
+    
+
+}
+
+.logo-img{
+    width: 5%;
+}
+.logo-img img{
+    width: 100%;
+}
+
+.continer header nav{
+    margin-top: 1.5%;
+}
+.continer header nav ul li{
+    list-style: none;
+    display: inline;
+    padding: 1px 16px;
+    
+
+}
+
+.continer header nav ul li a{
+    text-decoration: none;
+    color: #595959;
+    text-align: center;
+    font-family: myFont;
+    padding: 23px 15px;
+    transition: all 0.2s;
+    
+}
+
+.continer header nav ul li a:hover{
+    color: #e6b800;
+    text-shadow: 5px 5px 5px gray;
+    transform: scale(0.05,0.05);
+}
+
+.continer header  i{
+    color: #595959;
+}
+
+.continer header .logo i{
+    font-size: 3rem;
+
+}
+
+.continer header .left {
+    margin-top: 1.7%;
+    position: relative;
+}
+
+.input-search{
+    position: absolute;
+    top: 110%;
+    z-index: 5;
+    
+    right: 0;
+    z-index: 5;
+    width: 1700px;
+    
+
+   
+   
+}
+.input-search input{
+    width: 100%;
+    height: 70px;
+    font-size: 17px;
+    padding: 0 5px;
+    border: 1px solid gray;
+    border-radius: 6px;
+}
+
+.continer header .left i{
+    margin: 0 5px;
+}
+
+
+/* slider bug */
+
+.sliders{
+   margin-top: 100px;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+
+.sliders{
+    margin-top: -1px;
+}
+
+.sliders .swiper{
+  width: 100%;
+  height: 70vh;
+}
+
+.sliders .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* width: 10%;
+  height: 100vh; */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.sliders .swiper-slide img {
+  display: block;
+  width: 80%;
+  height: 140%;
+  object-fit: cover;
+}
+
+
+/* card Producr */
+
+.card-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    margin-bottom: 3%;
+}
+
+/* #card-tr{
+    transform: scale(1.2,1.2);
+    z-index: 2;
+} */
+
+.card-product .card{
+    margin: 0 10px;
+    background: white;
+    position: relative;
+}
+
+
+.card-product .card{
+    width: 25%;
+    
+    text-align: center;
+    
+    box-shadow: 5px 0 14px 10px gray;
+    height: 1%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    font-size: 14px;
+    
+    
+}
+
+.card-product .card img{
+    width: 100%;
+    height: 1%;
+    margin: 0 auto;
+    transition: transform 1s;
+   
+}
+
+.card-product .card img:hover{
+    transform: scale(1.05,1.05);
+
+}
+
+
+/* #cards{
+    margin-right: 30px;
+} */
+
+.card-product .card h2{
+    font-family: myFont;
+    margin-bottom: 10px;
+    font-size:15px;
+    
+}
+
+
+
+.card-product .card p{
+    font-family: myFont;
+    margin-bottom: 10px;
+}
+
+.card-product .card h3{
+    margin-bottom: 10px;
+}
+
+.card .star{
+    margin-bottom: 10px;
+}
+
+.card button{
+    padding: 10px 10px;
+    
+   cursor: pointer;
+    width: 100%;
+    
+   
+    border: 0;
+    color: white;
+
+}
+
+
+.rd{
+    color: red;
+}
+
+.bg-rd{
+    background: red;
+}
+
+
+.gold{
+    color: #ffb31a;
+}
+
+.bg-gold{
+    background: #ffb31a;
+}
+
+.green{
+    color: #00e600;
+}
+
+.bg-green{
+    background: #00e600;
+}
+
+.unset{
+    color: #ffb31a;
+}
+
+.title{
+    width: 90%;
+    background: #ffb31a;
+    color: white;
+    padding: 10px 20px;
+    font-family: myFont;
+    border-radius: 50px;
+    margin: 0 auto;
+    
+    box-shadow: 5px 0 14px 10px gray;;
+
+
+}
+
+/* ارسال رایگان */
+
+.arsal{
+    width: 100%;
+    display: flex;
+    padding: 0 10%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.arsal .free{
+    width: 30%;
+    text-align: right;
+    display: flex;
+    font-family: myFont;
+    
+}
+.arsal .free .p-h{
+    margin-right: 15px;
+}
+.arsal .free .p-h p{
+    font-size: 12px;
+}
+
+.arsal .free i{
+    font-size: 35px;
+    margin-top: 8px;
+    color: #ffb31a;
+
+}
+
+
+/* اسلایدر برای محصولات */
+
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+ 
+
+.slider-products .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-products .swiper-slide {
+
+  text-align: center;
+  font-size: 14px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  margin-top: 5%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 5px 0 14px 10px #bfbfbf;
+  margin-bottom: 5%;
+}
+
+.slider-products .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.slider-products .swiper-slide img:hover{
+
+    transform: scale(1.1,1.1);
+}
+
+.prod-slider{
+    font-family: myFont;
+}
+
+
+.prod-slider h3{
+    text-align: center;
+    padding: 10px 0;
+   
+    
+}
+
+.prod-slider p{
+    margin: 0 10px;
+    
+}
+
+.prod-slider button{
+    width: 100%;
+    padding: 10px 0;
+    font-family: myFont;
+    border: 0;
+    background: #ffb31a;
+    color: white;
+    cursor: pointer;
+}
+
+.prod-slider .star{
+   margin: 20px 0;
+}
+
+/* tow-card */
+
+.tow-card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    padding: 0 7%;
+    margin: 5% 0;
+}
+.tow-card .card-1{
+    width: 48%;
+    height: 60vh;
+    margin: 5px 5px;
+    box-shadow: 5px 5px 5px gray;
+    transition: transform 0.3s;
+    
+}
+.tow-card .card-1:hover{
+    transform: scale(1.1,1.1);
+    z-index: 5;
+}
+
+.tow-card .card-1 img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.tow-card .card-2{
+    width: 48%;
+    height: 60vh;
+    
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+    
+}
+
+.tow-card .card-2 .one{
+
+    width: 47%;
+    height: 30vh;
+    border-radius: 10px;
+    margin: 5px 5px;
+    box-shadow: 5px 5px 5px gray;
+    
+}
+
+.tow-card .card-2 .one img{
+
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 0;
+    transition: transform 0.5s;
+}
+.tow-card .card-2 .one img:hover{
+
+    transform: scale(1.1,1.1);
+    z-index: 5;
+}
+
+
+
+/* tow product */
+
+.tow-product{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5% 0;
+    padding: 0 5%;
+
+}
+
+.prod-one{
+    width: 47%;
+    height: 50vh;  
+    background: #f2f2f2;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px gray;
+    transition: transform 0.3s;
+}
+
+.prod-one:hover{
+    transform: scale(1.1,1.1);
+    z-index: 5;
+}
+
+.tow-product img{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 30px;
+}
+
+.prod-tow{
+    width: 47%;
+    height: 50vh;
+    background: #e6e6e6;
+    border-radius: 30px;
+    box-shadow: 10px 10px 10px gray;
+    transition: transform 0.3s;
+}
+
+.prod-tow:hover{
+    transform: scale(1.1,1.1);
+    z-index: 5;
+}
+
+/* Footer */
+
+footer{
+    background: #cccccc;
+    padding: 5% 5%;
+}
+.botton-footer {
+    display: flex;
+    justify-content: space-between;
+    
+    
+    font-size: 1rem;
+    font-family: myFont;
+    padding-bottom: 5%;
+    border-bottom: 1px solid black;
+
+}
+
+.botton-footer .footer li{
+    display: block;
+    list-style: none;
+    margin: 10px 0;
+}
+.botton-footer .footer li a:hover{
+    
+    color: #008fb3;
+}
+.botton-footer .footer li a{
+    color: #000;
+    text-decoration: none;
+}
+
+.title-footer h5{
+
+    color: #527a7a;
+    font-size: 1.3rem;
+}
+
+.mobile{
+    padding: 2% 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
+.mobile i{
+    margin: 0 10px;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.mobile a{
+    text-decoration: none;
+    color: #4d4d4d;
+    
+}
+.mobile i:hover{
+
+    background: #737373;
+    color: #bfbfbf;
+    
+}
+
+
+
+
+/* hide tag */
+.hide{
+    display: none;
+}
+
+.top-continer{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 912px) {
+
+    body {
+        overflow-x: hidden;
+    }
+    /* show tag */
+    .hide{
+        display: block;
+    }
+    .hidep{
+        display: none;
+    }
+
+    .input-search{
+        display: none;
+    }
+    .logo-img{
+        width: 13%;
+    }
+
+
+    .top-header .logo i {
+        margin: 0 5px;
+        font-size: 15px;
+        color: #f2f2f2;
+    
+    }
+    
+    .top-header .login-sign i{
+        margin: 0 5px;
+        font-size: 15px;
+        color: #f2f2f2;
+    }
+  
+    .continer header{
+       
+        width: 100%;
+        
+       
+        background: #ffffff;
+        
+        position: relative;
+        padding: 1% 5%;
+    
+    }
+    .left{
+        display: none;
+    }
+
+    .menue{
+        margin-top: 2%;
+        margin-right: 5px;
+    }
+
+    .menue i{
+        font-size: 2rem;
+    }
+    
+    
+    nav{   
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        background: #f2f2f2;
+        top: 91%;
+        height: 100vh;  
+        
+        right: 0;
+        display: none;
+    }
+    .continer header nav ul li{
+        list-style: none;
+        display: block;
+        padding: 7px 5px;
+       border-bottom: 1px solid #737373;
+        
+        
+    
+    }
+
+    .continer header nav ul li a:hover{
+    color: #e6b800;
+    text-shadow: 5px 5px 5px gray;
+    transform: scale(0.05,0.05);
+    }
+
+    .continer header nav ul li a:hover{
+        background: unset;
+    }
+    
+    .continer header nav ul li a{
+        text-decoration: none;
+        color: #737373;
+        text-align: center;
+        font-family: myFont;
+        padding: 23px 15px;
+        transition: all 0.2s;
+        font-size: 13px;
+        
+    }
+
+    .sliders .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+    .sliders .swiper-slide img{
+        width: 100%;
+    }
+
+    .home{
+        margin-top: 5px;
+    }
+
+    .continer header .logo{
+        
+        position: absolute;
+        left: 14px;
+        top: 32%;
+
+    
+    }
+
+    .continer header .logo i{
+        font-size: 28px;
+    }
+    .sliders{
+        margin-top: 0;
+    }
+
+    #close{
+        display: none;
+    }
+    
+
+
+    /* card Producr */
+
+.card-product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 6%;
+    margin-bottom: 5%;
+}
+
+.card-product .card{
+    margin: 0 4px;
+    background: white;
+    position: relative;
+}
+
+.card-product .card{
+    width: 28%;
+    text-align: center;
+    
+    box-shadow: 5px 0 14px 10px gray;
+    height: 20%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    
+}
+
+.card-product .card img{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    transition: transform 1s;
+   
+}
+
+
+
+#cards{
+    margin-right: 1px;
+}
+
+.card-product .card h2{
+    font-family: myFont;
+    margin-bottom: 2px;
+    font-size:10px;
+    
+}
+
+
+
+.card-product .card p{
+    font-family: myFont;
+    margin-bottom: 2px;
+    font-size: 8px;
+}
+
+.card-product .card h3{
+    margin-bottom: 1px;
+    font-size: 10px;
+}
+
+.card .star{
+    margin-bottom: 1px;
+}
+
+.card .star i{
+    font-size:8px;
+}
+
+.card button{
+    padding: 10px 10px;
+   font-size: 10px;
+    width: 100%;
+    
+   
+    border: 0;
+    color: white;
+
+}
+
+
+
+.title{
+    width: 90%;
+    
+    padding: 5px 10px;
+    
+    border-radius: 40px;
+    
+    font-size: 10px;
+    
+}
+
+/* ارسال رایگان */
+
+.arsal{
+    width: 100%;
+    display: flex;
+    padding: 0 5%;
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+
+.arsal .free{
+    width: 35%;
+    text-align: center;
+    display: block;
+    font-family: myFont;
+    margin: 0 5px;
+    
+}
+.arsal .free .p-h{
+    margin-right: 0;
+    font-size: 5px;
+}
+.arsal .free i{
+    font-size: 15px;
+    margin-top: 8px;
+    color: #ffb31a;
+
+}
+
+/* slider-product */
+
+
+
+ 
+
+.slider-products .swiper {
+  width: 80%;
+  height: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  
+  
+}
+
+.slider-products .swiper-slide {
+
+  text-align: center;
+  font-size: 10px;
+  background: white;
+  border: 1px solid gray;
+  /* Center slide text vertically */
+ 
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 0 0 0 white;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+
+.prod-slider h3{
+    
+    padding: 5px 0;
+   
+    
+}
+
+.prod-slider p{
+    margin: 0 10px;
+    
+}
+
+.prod-slider button{
+   
+    padding: 7px 0;
+    
+    color: white;
+    font-size: 10px;
+    
+}
+
+.prod-slider .star{
+   margin: 5px 0;
+}
+
+.slider-products .swiper-pagination{   
+    margin-top: 100px;
+}
+
+
+/* tow product */
+/* .tow-product{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 5% 0;
+    padding: 0 5%;
+
+} */
+
+.prod-one{
+    width: 47%;
+    height: 100%;  
+    
+}
+
+.tow-product img{
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 20px;
+}
+
+.prod-tow{
+    width: 47%;
+    height: 100%;
+    background: #e6e6e6;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px gray;
+}
+
+/* footer */
+
+
+.botton-footer {
+    font-size: 0.6rem;
+}
+
+
+.mobile{
+    padding: 2% 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.5rem;
+    margin-bottom: 40px;
+}
+.mobile i{
+    margin: 0 6px;
+    border: 1px solid gray;
+    padding: 4px;
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.mobile a{
+    text-decoration: none;
+    color: #4d4d4d;
+    
+}
+.mobile i:hover{
+
+    background: #737373;
+    color: #bfbfbf;
+    
+}
+.top-continer{
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    background: white;
+    
+   
+}
+
+.top-continer .conter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+.top-continer .conter i{
+    font-size: 22px;
+    margin: 0 35px;
+    color: #ffaa00;
+}
+
+.top-continer .conter i:hover{
+    color: #ffbb33;
+}
+
+.top-continer .conter .name p{
+    font-family: myFont;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* tow-card */
+
+.tow-card{
+    
+    padding: 0 3%;
+    margin: 3% 0;
+}
+.tow-card .card-1{
+    
+    width: 45%;
+    height: 100%;
+    margin: 5px 5px;
+    box-shadow: 0 0 0 gray;
+    padding-top: 10px;
+    
+}
+
+.tow-card .card-1 img{
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.tow-card .card-2{
+    width: 52%;
+    height: 100%;  
+    
+}
+
+.tow-card .card-2 .one{
+    padding-top: 6px;
+    width: 47%;
+    height: 100%;
+    
+    margin: 0 2px;
+    box-shadow: 0 0 0 gray;
+    
+}
+
+.tow-card .card-2 .one img{
+
+    width: 100%;
+    
+    border-radius: 10px;
+    border: 0;
+}
+
+.title-footer h5{
+    font-size: 0.8rem;
+}
+
+  }

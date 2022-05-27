@@ -1,0 +1,372 @@
+@font-face {
+    font-family: sans;
+    src: url(../font-farsi/Sans\ a4fran3.woff) format('woff');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans;
+}
+
+continer-load{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: white;
+    z-index: 15;
+}
+
+.loading{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid;
+    z-index: 16;
+    top: 40%;
+    right: 50%;
+    border-radius: 50%;
+    animation: load 1s infinite;
+    animation-timing-function: linear;
+    
+    animation-direction: reverse;
+    
+}
+.loading img{
+    width: 100%;
+    height: 100%;
+    
+}
+
+.load-stop{
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes load{
+   
+    0%{
+        transform: rotate(0);
+        border-bottom: 0;
+    border-left: 0;
+        
+    }
+    50%{
+        transform: rotate(90deg);
+        border: 4px solid yellow;
+        border-bottom: 0;
+    border-left: 0;
+    }
+    75%{
+        transform: rotate(180deg);
+        border: 4px solid red;
+        border-bottom: 0;
+    border-left: 0;
+    }
+
+    100%{
+        transform: rotate(360deg);
+        border: 4px solid gray;
+        border-bottom: 0;
+    border-left: 0;
+    }
+    
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    background: #33ccff;
+    padding: 0.5% 0;
+}
+header .logo{
+    width: 4%;
+    border-radius: 50%;
+    padding: 0.2%;
+    background: white;
+    margin-left: 1%;
+
+}
+header .logo img{
+    width: 100%;
+}
+header nav{
+    margin-top: 2%;
+}
+
+header nav ul li{
+    display: inline-block;
+    list-style: none;
+    padding: 0 20px;
+}
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-family: sans;
+    font-size: 14px;
+}
+
+.continer{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    flex-wrap: wrap;
+    background: #e6e6e6;
+    width: 100%;
+    height: 100%;
+}
+.continer .boxes{
+    width: 20%;
+    text-align: center;
+    border: 1px solid gray;
+    padding: 0;
+    margin: 2% 0.6%;
+    height: 34%;
+    background: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 10px 14px 5px gray;
+    transition: transform 0.4s;
+    
+    
+    
+}
+
+
+.continer .boxes h3{
+    font-size: 15px;
+    margin: 2% 0;
+}
+
+.continer .boxes p{
+    font-size: 13px;
+    margin: 2% 0;
+}
+
+
+.continer .boxes .top-img{
+    width: 100%;
+    background: white;
+    height: 50%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+}
+.continer .boxes .top-img img{
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    transition: transform 0.4s;
+}
+
+.continer .boxes button{
+    width: 60%;
+    display: block;
+    border: 0;
+    padding: 5px;
+    background: #ffbb33;
+    color: white;   
+    margin: 4% auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.continer .boxes .top-img img:hover{
+    transform: scale(1.1);
+}
+
+.top-img .more{
+    position: absolute;
+    left: 2%;
+    background: #f5efef;
+    margin-top: 1%;
+    border-top-left-radius: 15px;
+    display: none;
+    z-index: 4;
+}
+
+.top-img .more i{
+    display: block;
+    padding: 10px;
+    color: gray;
+    cursor: pointer;
+    z-index: 4;
+    transition: transform 0.4s;
+}
+
+.top-img .more i:hover{
+    color: #ffbb33;
+    transform: rotate(360deg);
+}
+
+.search{
+    position: relative;
+    
+    width: 20%;
+    padding-top: 1.7%;
+}
+
+.search a{
+    
+    background: #f5efef;
+    display: inline-block;
+    position: absolute;
+    right: 3%;
+    padding: 1.4px 8px;
+    border: 0;
+    text-decoration: none;
+    
+}
+
+.search a i{
+    color: #999999;
+}
+.search input{
+    display: inline-block;
+    position: absolute;
+    width: 76%;
+    height: 30px;
+    right: 15%;
+    border: 0;
+}
+
+.top{
+    position: fixed;
+    z-index: 7;
+    transition: all 1s;
+    top: 0;
+}
+.menu{
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .search{
+        display: none;
+    }
+    .menu{
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: 30%;
+    }
+    .menu i{
+        font-size: 26px;
+    }
+
+    header{
+        display: block;
+        justify-content: space-between;
+        justify-items: center;
+        background: #33ccff;
+        position: relative;
+        width: 100%;
+        height: 65px;
+        
+    }
+    
+    header nav{
+        margin-top: 0;
+        position: absolute;
+        right: 1px;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.7);
+        z-index: 9;
+        top: 100%;
+        text-align: center;
+        display: none;
+    }
+    
+    header nav ul li{
+        display: block;
+        padding: 6px 30px;
+        
+        
+    }
+    header nav ul li a{
+        color: white;
+        text-decoration: none;
+        font-family: sans;
+        font-size: 14px;
+        border-bottom: 1px solid white;
+        display: block;
+        padding-bottom: 5px;
+        
+
+    }
+
+    header .logo{
+        position: absolute;
+        left: 0;
+        top: 1%;
+       width: 12%;
+       border-radius: 50%;
+       padding: 0%;
+       margin-left: 3%;
+       margin-top: 0.5%;
+
+       
+    
+    }
+    header .logo img{
+        width: 100%;
+       
+        border-radius: 50%;
+    }
+
+    .continer{
+        display: block;
+        padding: 5% 0;
+    }
+
+
+    .continer .boxes{
+        width: 70%;
+        margin: 5% auto;
+        height: 30%; 
+        box-shadow: 5px 5px 6px #a6a6a6;
+    }
+
+    .continer .boxes h3{
+        font-size: 15px;
+        margin: 1% 0;
+        font-family: sans;
+    }
+    
+    .continer .boxes p{
+        font-size: 15px;
+        margin: 1% 0;
+        
+    }
+
+    .top-img .more{
+        left: 2%;
+        margin-top: 1%;
+    }
+    
+    .top-img .more i{
+        
+        padding: 10px;
+        font-size: 20px;
+    }
+
+    .continer .boxes button{
+        padding: 7px;
+        margin: 4% auto;
+        font-size: 17px;
+    }
+}

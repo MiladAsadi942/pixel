@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/login/style.css' %}">
+    <link rel="stylesheet" href=" {% static 'project1/css/login/css/bootstrap.min.css' %}">
+    <script src="{% static 'project1/js/login/jquery-3.6.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'project1/css/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/css/fontawesome.min.css">
+    
+</head>
+<body>
+
+<div class="Continer-form">
+    <section class="sign">
+        <div class="ext">
+            <a href="../"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <form action="/index/login/" method="POST">
+            {% csrf_token %}
+            <h3>Create Account</h3>
+            <input type="text" placeholder="Username" name="FirstName">
+            <input type="email" placeholder="Email" name="Email">
+            <input type="password" placeholder="Password" name="password">
+            <button class="color-btn1" id="s-sign" type="submit">Sign Up</button>
+            <button id="s-login" type="submit">Login</button>
+        </form>
+    </section>
+
+
+
+
+<section class="Login">
+    <form>
+        <h3>Login Account</h3>
+        
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button id="l-sign" type="submit">Sign Up</button>
+        <button class="color-btn1" id="l-login" type="submit">Login</button>
+    </form>
+</section>
+</div>
+    
+    <script src="{% static 'project1/js/login/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'project1/js/login/js/bootstrap.bundle.min.js' %}"></script>
+    <script src=" {% static 'project1/js/login/script.js' %}"></script>
+</body>
+</html>

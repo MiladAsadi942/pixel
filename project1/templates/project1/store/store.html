@@ -1,0 +1,76 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'project1/css/store/storee.css' %}">
+    <script src="{% static 'project1/js/store/../jquery/jquery-3.6.0.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'project1/css/store/../css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'project1/css/store/../css/fontawesome.min.css' %}">
+    <script>
+        window.addEventListener('load',function(){
+            document.querySelector('.continer-load').classList.add('load-stop')
+        })
+    </script>
+</head>
+<body dir="rtl">
+<div class="continer-load"><div class="loading"></div></div>
+<div class="header">
+    <header>
+        <div class="menu"><i class="fa-solid fa-bars"></i></div>
+        <nav>
+            <ul>
+                {% for StoreNav in storenav %}
+                <li><a href="{{StoreNav.hrf}}">{{StoreNav}}</a></li>
+                {% endfor %}
+                
+            </ul>
+        </nav>
+        <div class="search">
+            <a href="#"><i class="fa-solid fa-magnifying-glass" id="search"></i></a>
+            <input type="search">
+        </div>
+        {% for log in logo %}
+        <div class="logo"><img src="{{log.Logo.url}}" alt=""></div>
+        {% endfor %}
+    </header>
+</div>
+    <div class="continer">
+        {% for i in store %}
+        <div class="boxes">
+            <div class="top-img">
+                <div class="more">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                    <i class="fa-brands fa-app-store"></i>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <img src="{{i.ProdImg.url}}" alt="">
+            </div>
+            <h3>{{i.ProdTitle}}</h3>
+            <p>{{i.About}}</p>
+            <p>{{i.ProdPrice}}$</p>
+            <button onclick="window.location.href='view/{{i.id}}';">click</button>
+        </div>
+        {% endfor %}
+
+        
+
+    </div>
+
+    
+
+    
+
+
+    <script src="{% static 'project1/js/store/store.js' %}"></script>
+</body>
+</html>
